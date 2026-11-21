@@ -1,6 +1,6 @@
 # SomeUtilities
 
-An assortment of small, utility applications
+An assortment of small, console utility applications
 
 ## .NET version
 
