@@ -4,7 +4,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine($"Assembly: {Assembly.GetExecutingAssembly().GetName().Name}");
+        if (args.Length > 0)
+        {
+            if (args[0] == "--version")
+            {
+                var version = Assembly.GetExecutingAssembly().GetName().Version;
+                Console.WriteLine($"Version: {version}");
+            }
+            else
+            {
+                Console.WriteLine("Unknown argument. Use --version to get the version.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("SomeUtilities --version");
+        }
     }
 }   
