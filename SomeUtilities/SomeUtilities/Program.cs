@@ -4,11 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine($"Assembly: {Assembly.GetExecutingAssembly().GetName().Name}");
-
         if (args.Length > 0)
         {
-            Console.WriteLine($"Arguments: {string.Join(", ", args)}");
+            if (args[0] == "--version")
+            {
+                var version = Assembly.GetExecutingAssembly().GetName().Version;
+                Console.WriteLine($"Version: {version}");
+            }
+            else
+            {
+                Console.WriteLine("Unknown argument. Use --version to get the version.");
+            }
         }
         else
         {
