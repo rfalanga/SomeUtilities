@@ -6,13 +6,20 @@ name: Some Utilities Main
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - "SomeUtilities/**"
   pull_request:
     branches: [ "main" ]
+    paths:
+      - "SomeUtilities/**"
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: SomeUtilities
 
     steps:
     - uses: actions/checkout@v7
