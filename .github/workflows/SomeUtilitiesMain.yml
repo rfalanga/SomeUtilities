@@ -8,10 +8,12 @@ on:
     branches: [ "main" ]
     paths:
       - "SomeUtilities/**"
+      - "!SomeUtilities/PowerShellScripts/**"
   pull_request:
     branches: [ "main" ]
     paths:
       - "SomeUtilities/**"
+      - "!SomeUtilities/PowerShellScripts/**"
 
 jobs:
   build:
